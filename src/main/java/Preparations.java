@@ -48,8 +48,6 @@ public class Preparations {
     public WebDriver goToRegisterPage() {
         WebDriver driver = loadOrganicShop();
 
-        //driver.findElement(By.xpath("/html/body/header/div[1]/nav/div[2]/a[3]")).click();
-
         driver.findElement(By.xpath("//i[@class='fas fa-fw fa-sign-in-alt']")).click();
         driver.findElement(By.xpath("//a[contains(text(),'Регистрация')]")).click();
 
