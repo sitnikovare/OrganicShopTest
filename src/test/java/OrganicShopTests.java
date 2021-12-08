@@ -58,9 +58,9 @@ public class OrganicShopTests {
         wait.until(ExpectedConditions.elementToBeClickable(element)).click();
 
         String allertText = driver.switchTo().alert().getText();
-        System.out.println(allertText);
+        driver.switchTo().alert().accept();
 
         Assert.assertEquals("Пожалуйста, укажите корректно (только буквы - кириллица) Ваше имя", allertText);
-        //driver.close();
+        driver.close();
     }
 }

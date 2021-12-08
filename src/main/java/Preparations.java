@@ -27,10 +27,10 @@ public class Preparations {
     public WebDriver filterPrices(String minPrice, String maxPrice) {
         WebDriver driver = loadOrganicShop();
 
-        WebElement element = driver.findElement(By.xpath("//*[@id='menu']/a[1]"));
+        WebElement element = driver.findElement(By.xpath("//a[contains(text(),'Каталог')]"));
         element.click();
-        driver.findElement(By.xpath("//*[@id='catalog']/div/div[1]/b[1]/a")).click();
-        driver.findElement(By.xpath("//*[@id='allfilters']/div[7]/span")).click();
+        driver.findElement(By.xpath("//a[contains(text(),'Все продукты')]")).click();
+        driver.findElement(By.xpath("//span[@href='#filt_price']")).click();
         element = driver.findElement(By.xpath("//input[@name='price_min']"));
         element.clear();
         element.sendKeys(minPrice);
@@ -38,7 +38,7 @@ public class Preparations {
         element.clear();
         element.sendKeys(maxPrice);
 
-        element = driver.findElement(By.xpath("//*[@id='allfilters']/button[1]"));
+        element = driver.findElement(By.xpath("//button[contains(text(),'Применить')]"));
         WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.elementToBeClickable(element)).click();
 
@@ -48,8 +48,10 @@ public class Preparations {
     public WebDriver goToRegisterPage() {
         WebDriver driver = loadOrganicShop();
 
-        driver.findElement(By.xpath("/html/body/header/div[1]/nav/div[2]/a[3]")).click();
-        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div[1]/p[2]/a")).click();
+        //driver.findElement(By.xpath("/html/body/header/div[1]/nav/div[2]/a[3]")).click();
+
+        driver.findElement(By.xpath("//i[@class='fas fa-fw fa-sign-in-alt']")).click();
+        driver.findElement(By.xpath("//a[contains(text(),'Регистрация')]")).click();
 
         return driver;
     }
