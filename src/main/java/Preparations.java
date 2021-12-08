@@ -29,10 +29,8 @@ public class Preparations {
 
         WebElement element = driver.findElement(By.xpath("//*[@id='menu']/a[1]"));
         element.click();
-        element = driver.findElement(By.xpath("//*[@id='catalog']/div/div[1]/b[1]/a"));
-        element.click();
-        element = driver.findElement(By.xpath("//*[@id='allfilters']/div[7]/span"));
-        element.click();
+        driver.findElement(By.xpath("//*[@id='catalog']/div/div[1]/b[1]/a")).click();
+        driver.findElement(By.xpath("//*[@id='allfilters']/div[7]/span")).click();
         element = driver.findElement(By.xpath("//input[@name='price_min']"));
         element.clear();
         element.sendKeys(minPrice);
@@ -50,10 +48,8 @@ public class Preparations {
     public WebDriver goToRegisterPage() {
         WebDriver driver = loadOrganicShop();
 
-        WebElement element = driver.findElement(By.xpath("/html/body/header/div[1]/nav/div[2]/a[3]"));
-        element.click();
-        element = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div[1]/p[2]/a"));
-        element.click();
+        driver.findElement(By.xpath("/html/body/header/div[1]/nav/div[2]/a[3]")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/div[2]/div[1]/p[2]/a")).click();
 
         return driver;
     }

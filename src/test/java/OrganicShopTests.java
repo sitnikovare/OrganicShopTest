@@ -39,7 +39,7 @@ public class OrganicShopTests {
         Preparations preparation = new Preparations();
         WebDriver driver = preparation.loadOrganicShop();
 
-        WebElement element = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/a[10]"));
+        WebElement element = driver.findElement(By.xpath("//a[@title='Planeta Organica']"));
         Actions action = new Actions(driver);
         action.moveToElement(element).build().perform();
         String toolTipText = element.getAttribute("title");
@@ -53,7 +53,7 @@ public class OrganicShopTests {
         Preparations preparation = new Preparations();
         WebDriver driver = preparation.goToRegisterPage();
 
-        WebElement element = driver.findElement(By.xpath("//*[@id='registration-form']/div[6]/input[1]"));
+        WebElement element = driver.findElement(By.xpath("//input[@name='savebutton']"));
         WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.elementToBeClickable(element)).click();
 
